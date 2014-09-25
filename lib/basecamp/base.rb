@@ -15,6 +15,7 @@ module Basecamp
       Resource.password = password
       Resource.site     = (use_ssl ? "https" : "http") + "://" + site
       Resource.format   = (use_xml ? :xml : :json)
+      Resource.proxy = Rails.application.config.proxy_full_address
 
       @connection = Connection.new(self)
     end
